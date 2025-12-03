@@ -23,4 +23,8 @@ public class Department {
         }
         return true;
     }
+
+    public Department(String departmentName) {
+        this.departmentName = departmentName;
+    }
 }
