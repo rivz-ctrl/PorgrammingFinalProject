@@ -3,7 +3,7 @@ package org.reeves;
 public class Department {
     private String departmentId;
     private String departmentName;
-    private static int nextId;
+    private static int nextId = 1;
 
     /**
      * checks if a department name is valid or not (should only contain letters or space)
@@ -25,6 +25,13 @@ public class Department {
     }
 
     public Department(String departmentName) {
-        this.departmentName = departmentName;
+        if (isDepartmentNameValid(departmentName)) {
+            this.departmentName = departmentName;
+            this.departmentId = String.format("D%02d", nextId);
+            nextId++;
+        } else {
+            this.departmentName = null;
+            this.departmentId = null;
+        }
     }
 }
