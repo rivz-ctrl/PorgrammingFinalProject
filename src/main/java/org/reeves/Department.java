@@ -1,9 +1,9 @@
 package org.reeves;
 
 public class Department {
-    String departmentId;
-    String departmentName;
-    static int nextId;
+    private String departmentId;
+    private String departmentName;
+    private static int nextId;
 
     /**
      * checks if a department name is valid or not (should only contain letters or space)
