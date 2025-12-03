@@ -10,4 +10,30 @@ public class Address {
     public enum Province {
         AB, BC, MB, NB, NL, NT, NS, NU, ON, PE, QC, SK, YT
     }
+
+    /**
+     * checks if a postcode is valid or not
+     * @param postalCode the postcode to be verified
+     * @return whether the postcode is valid
+     */
+    static boolean isPostalCodeValid(String postalCode) {
+        if (postalCode.length() != 6) {
+            return false;
+        }
+
+        for(int i = 0; i < 6; i++) {
+            char c = postalCode.charAt(i);
+
+            if (i % 2 != 0) {
+                if (Character.isDigit(c)) {
+                    return false;
+                } else {
+                    if (Character.isLetter(c)) {
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
+    }
 }
