@@ -38,10 +38,19 @@ public class Address {
     }
 
     public Address(int streetNo, String street, String city, Province province, String postalCode) {
-        this.streetNo = streetNo;
-        this.street = street;
-        this.city = city;
-        this.province = province;
-        this.postalCode = postalCode;
+        if (isPostalCodeValid(postalCode)) {
+            this.streetNo = streetNo;
+            this.street = street;
+            this.city = city;
+            this.province = province;
+            this.postalCode = postalCode.toUpperCase();
+        } else {
+            this.streetNo = -1;
+            this.street = null;
+            this.city = null;
+            this.province = null;
+            this.postalCode = null;
+        }
+
     }
 }
