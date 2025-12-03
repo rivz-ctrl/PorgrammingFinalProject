@@ -9,7 +9,7 @@ public class Student {
     private Address address;
     private Department department;
     private ArrayList<Course> registeredCourses;
-    private static int nextId;
+    private static int nextId = 1;
 
     public enum Gender {
         MALE, FEMALE;
@@ -17,13 +17,19 @@ public class Student {
 
     /**
      * registers a course
-     * 1) adds the course to the student's registeredCourses lsit
-     * 2) adds the student to the course<s registeredStudents list
+     * 1) adds the course to the student's registeredCourses list
+     * 2) adds the student to the course's registeredStudents list
      * 3) appends a null for the scores of each assignment of the course
      * if the course is already registered, directly returns false without adding anything
      * @param course the course to be registered
      * @return whether the student can be registered
      */
     public boolean registerCourses(Course course) {
+        if (registeredCourses.contains(course)) {
+            return false;
+        }
+
+        registeredCourses.add(course);
+
     }
 }
