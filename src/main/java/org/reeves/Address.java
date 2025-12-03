@@ -26,7 +26,7 @@ public class Address {
      * @return whether the postcode is valid
      */
     static boolean isPostalCodeValid(String postalCode) {
-        if (postalCode.length() != 6) {
+        if (postalCode == null || postalCode.length() != 6) {
             return false;
         }
 
