@@ -11,6 +11,16 @@ public class Department {
      * @return whether the department name is valid
      */
     static boolean isDepartmentNameValid(String departmentName) {
+        if (departmentName == null || departmentName.isEmpty()){
+            return false;
+        }
+
+        for (int i = 0; i < departmentName.length(); i++) {
+            char c = departmentName.charAt(i);
+            if (!Character.isLetter(c) && c != ' ') {
+                return false;
+            }
+        }
         return true;
     }
 }
