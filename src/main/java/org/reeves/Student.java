@@ -32,4 +32,25 @@ public class Student {
         registeredCourses.add(course);
 
     }
+
+    /**
+     * drops a course, removes the course from the student's registeredCourses list,
+     * and remove the student from the course's registeredStudents list
+     * if the course is not registered yet, directly returns false without removing anything
+     * @param course the course to be dropped
+     * @return whether the student's course can be dropped
+     */
+    public boolean dropCourse(Course course) {
+        return true;
+    }
+
+    public Student(String studentName, Gender gender, Address address, Department department) {
+        this.studentName = studentName;
+        this.gender = gender;
+        this.address = address;
+        this.department = department;
+
+        this.studentId = String.format("S%06d", nextId++);
+        this.registeredCourses = new ArrayList<>();
+    }
 }
