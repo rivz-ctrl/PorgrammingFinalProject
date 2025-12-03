@@ -1,7 +1,13 @@
 package org.reeves;
 
-import java.util.ArrayList;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.util.ArrayList;
+@EqualsAndHashCode
+@Getter
+@Setter
 public class Student {
     private String studentId;
     private String studentName;
@@ -41,7 +47,10 @@ public class Student {
      * @return whether the student's course can be dropped
      */
     public boolean dropCourse(Course course) {
-        return true;
+        if (!registeredCourses.contains(course)) {
+            return false;
+        }
+        registeredCourses.remove(course);
     }
 
     public Student(String studentName, Gender gender, Address address, Department department) {
@@ -53,4 +62,6 @@ public class Student {
         this.studentId = String.format("S%06d", nextId++);
         this.registeredCourses = new ArrayList<>();
     }
+
+
 }
