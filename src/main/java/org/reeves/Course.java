@@ -58,8 +58,7 @@ public class Course {
     }
 
     /**
-     * displays the scores of a course in a table
-     * (with assignment averages and student weighted average)
+     * displays the scores of a course in a table (with assignment averages and student weighted average)
      */
     public void displayScores() {
 
@@ -70,6 +69,14 @@ public class Course {
      * @return the simplified string
      */
     public String toSimplifiedString() {
+
+    }
+
+    /**
+     * converts a course to a string and a line to show if the current is AssignmentWeightValid
+     * @return
+     */
+    public String toString() {
 
     }
 
