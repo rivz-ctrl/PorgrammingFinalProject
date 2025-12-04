@@ -30,6 +30,8 @@ public class Student {
      * @param course the course to be registered
      * @return whether the student can be registered
      */
+
+    // dont forget to make Course  and assignments (reminder: they are just placeholders for now)
     public boolean registerCourses(Course course) {
         if (registeredCourses.contains(course)) {
             return false;
@@ -39,7 +41,6 @@ public class Student {
         int registeredStudents = 0;
         new ArrayList<>(registeredStudents);
 
-        if ()
 
     }
 
