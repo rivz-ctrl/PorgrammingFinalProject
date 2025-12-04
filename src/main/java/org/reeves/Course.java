@@ -57,6 +57,14 @@ public class Course {
 
     }
 
+    /**
+     * displays the scores of a course in a table
+     * (with assignment averages and student weighted average)
+     */
+    public void displayScores() {
+
+    }
+
 
     public String toSimplifiedStringg() {
         "}";
