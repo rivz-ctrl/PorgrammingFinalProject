@@ -25,22 +25,33 @@ public class Assignment {
     /**
      * calculates the average for the assignment
      */
-    void calcAssignmentAvg() {
+    public void calcAssignmentAvg() {
         int sum = 0;
         for (int score : scores) {
             sum += score;
         }
-        double avg = sum / (double) scores.size();
+        double assignmentAvg = sum / (double) scores.size();
     }
 
     /**
      * generates random scores for all students in an assignment
      */
-    void generateRandomScore() {
+    public void generateRandomScore() {
         Random random = new Random();
 
         for (int i = 0; i < scores.size(); i++) {
-            score
+            int num = random.nextInt(0,10);
+            if (num == 0) {
+                int score = random.nextInt(0, 60);
+            } else if (num == 1 || num == 2) {
+                int score = random.nextInt(60, 70);
+            } else if (num == 3 || num == 4 ) {
+                int score = random.nextInt(70, 80);
+            } else if (num == 5 || num == 6 || num == 7 || num == 8) {
+                int score = random.nextInt(80, 90);
+            } else {
+                int score = random.nextInt(90, 100);
+            }
         }
     }
 

@@ -36,10 +36,12 @@ public class Student {
         if (registeredCourses.contains(course)) {
             return false;
         }
+
         registeredCourses.add(course);
-        
-        int registeredStudents = 0;
-        new ArrayList<>(registeredStudents);
+
+        ArrayList<Student> registeredStudents = new ArrayList<>();
+        registeredStudents.add((String) studentName);
+
 
 
     }
