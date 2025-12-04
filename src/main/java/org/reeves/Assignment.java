@@ -10,6 +10,17 @@ public class Assignment {
     private ArrayList<Integer> scores;
     private static int nextId = 1;
 
+    public Assignment(String assignmentName, double weight, int students) {
+        this.assignmentId = "Assignment-" + nextId++;
+        this.assignmentName = assignmentName;
+        this.weight = 100;
+        this.scores = new ArrayList<>();
+
+        for (int i = 0; i < students; i++) {
+            scores.add(0);
+        }
+    }
+
     /**
      * calculates the average for the assignment
      */
