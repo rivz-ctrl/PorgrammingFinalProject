@@ -18,6 +18,18 @@ public class Course {
     public boolean isAssignmentWeightValid() {
     }
 
+    /**
+     * adds a student to the student list of the course
+     * adds a new null element to each assignment of this course
+     * adds a new null element for the finalScores
+     * @param student student to be added to student list
+     * @return if the student can be registered
+     */
+    public boolean registerStudent (Student student) {
+    }
+
+
+
 
 
     public String toSimplifiedStringg() {
