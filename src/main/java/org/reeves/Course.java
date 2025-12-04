@@ -35,6 +35,15 @@ public class Course {
     public int[] calcStudentsAverage() {
     }
 
+    /**
+     * adds a new assignment to the course
+     * @param assignmentName name of the assignment
+     * @param weight weight of the assignment
+     * @param maxScore maximum score obtainable on the assignment
+     * @return whether the new assignment can be added to the course
+     */
+    public boolean addAssignment(String assignmentName, double weight, int maxScore) {
+    }
 
 
 
