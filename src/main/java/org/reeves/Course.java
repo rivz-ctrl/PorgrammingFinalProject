@@ -65,6 +65,13 @@ public class Course {
 
     }
 
+    /**
+     * converts a course to a simple string
+     * @return the simplified string
+     */
+    public String toSimplifiedString() {
+
+    }
 
     public String toSimplifiedStringg() {
         "}";
