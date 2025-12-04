@@ -1,4 +1,5 @@
 package org.reeves;
 
-public class Courses {
+public class Course {
+
 }

@@ -68,6 +68,11 @@ public class Student {
         this.registeredCourses = new ArrayList<>();
     }
 
+    public void addCourse(Course course) {
+        courses.add(courses);
+        courses.getStudents().add(this);
+    }
+
     public String toSimplifiedString() {
         return department.getDepartmentName() + ' ' + studentName + ' ' + studentId;
     }
