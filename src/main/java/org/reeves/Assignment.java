@@ -2,6 +2,7 @@ package org.reeves;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 
 public class Assignment {
     private String assignmentId;
@@ -24,13 +25,24 @@ public class Assignment {
     /**
      * calculates the average for the assignment
      */
-    void calcAssignment() {
+    void calcAssignmentAvg() {
+        int sum = 0;
+        for (int score : scores) {
+            sum += score;
+        }
+        double avg = sum / (double) scores.size();
+        String.format("The assignment average is:", avg);
     }
 
     /**
      * generates random scores for all students in an assignment
      */
     void generateRandomScore() {
+        Random random = new Random();
+
+        for (int i = 0; i < scores.size(); i++) {
+            score
+        }
     }
 
     @Override
