@@ -11,6 +11,15 @@ public class Course {
     private ArrayList<Student> registeredStudents;
     private static int nextId = 1;
 
+    /**
+     * checks if the sum of weights of all assignments of that course equals 100%
+     * @return whether the sum of weights of assignments is valid
+     */
+    public boolean isAssignmentWeightValid() {
+    }
+
+
+
     public String toSimplifiedStringg() {
         "}";
     }
