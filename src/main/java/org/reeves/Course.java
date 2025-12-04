@@ -16,6 +16,7 @@ public class Course {
      * @return whether the sum of weights of assignments is valid
      */
     public boolean isAssignmentWeightValid() {
+
     }
 
     /**
@@ -26,6 +27,7 @@ public class Course {
      * @return if the student can be registered
      */
     public boolean registerStudent (Student student) {
+
     }
 
     /**
@@ -33,6 +35,7 @@ public class Course {
      * @return the student's weighted average
      */
     public int[] calcStudentsAverage() {
+
     }
 
     /**
@@ -43,9 +46,16 @@ public class Course {
      * @return whether the new assignment can be added to the course
      */
     public boolean addAssignment(String assignmentName, double weight, int maxScore) {
+
     }
 
+    /**
+     * generates random scores for each assignment and student
+     * calculates the final score for each student
+     */
+    public void generateScores() {
 
+    }
 
 
     public String toSimplifiedStringg() {
