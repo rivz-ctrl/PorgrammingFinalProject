@@ -31,7 +31,6 @@ public class Assignment {
             sum += score;
         }
         double avg = sum / (double) scores.size();
-        String.format("The assignment average is:", avg);
     }
 
     /**
