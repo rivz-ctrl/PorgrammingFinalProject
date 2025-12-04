@@ -13,6 +13,12 @@ public class Assignment {
     /**
      * calculates the average for the assignment
      */
-    public void calcAssignment() {
+    void calcAssignment() {
+    }
+
+    /**
+     * generates random scores for all students in an assignment
+     */
+    void generateRandomScore() {
     }
 }
