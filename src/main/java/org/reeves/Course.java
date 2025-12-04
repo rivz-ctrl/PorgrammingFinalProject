@@ -28,6 +28,13 @@ public class Course {
     public boolean registerStudent (Student student) {
     }
 
+    /**
+     * calculates the weighted average score of a student
+     * @return the student's weighted average
+     */
+    public int[] calcStudentsAverage() {
+    }
+
 
 
 
