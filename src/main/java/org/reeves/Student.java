@@ -38,12 +38,16 @@ public class Student {
         }
 
         registeredCourses.add(course);
+        course.getRegisteredStudents().add(this);
 
-        ArrayList<Student> registeredStudents = new ArrayList<>();
-        registeredStudents.add((String) studentName);
+        ArrayList<Integer> startingScores = new ArrayList<>();
+        for (Assignment assignment : course.getAssignments()) {
+            startingScores.add(null);
+        }
+        course.getscores().add(this, startingScores);
 
-
-
+        return true;
+        }
     }
 
     /**
@@ -57,7 +61,11 @@ public class Student {
         if (!registeredCourses.contains(course)) {
             return false;
         }
+
         registeredCourses.remove(course);
+        course.getRegisteredStudents().remove(this);
+
+        return true;
     }
 
     public Student(String studentName, Gender gender, Address address, Department department) {
@@ -65,14 +73,8 @@ public class Student {
         this.gender = gender;
         this.address = address;
         this.department = department;
-
         this.studentId = String.format("S%06d", nextId++);
         this.registeredCourses = new ArrayList<>();
-    }
-
-    public void addCourse(Course course) {
-        courses.add(courses);
-        courses.getStudents().add(this);
     }
 
     public String toSimplifiedString() {
@@ -90,7 +92,4 @@ public class Student {
                 ", registeredCourses=" + toSimplifiedString() +
                 '}';
     }
-
-
-
 }
