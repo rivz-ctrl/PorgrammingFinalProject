@@ -38,26 +38,28 @@ public class Assignment {
         double assignmentAvg = sum / (double) scores.size();
         System.out.printf("Assignment average for %s (%s) is: %f", assignmentName, assignmentId, assignmentAvg);
     }
-
+// does range [0, 10] exclude or include 10
     /**
      * generates random scores for all students in an assignment
      */
     public void generateRandomScore() {
         Random random = new Random();
 
-        for (int i = 0; i < scores.size(); i++) {
-            int num = random.nextInt(0,10);
+        for (Student student : registeredStudents) {
+            int rando = random.nextInt(11);
             int score = -1;
-            if (num == 0) {
-                score = random.nextInt(0, 60);
-            } else if (num == 1 || num == 2) {
-                score = random.nextInt(60, 70);
-            } else if (num == 3 || num == 4 ) {
-                score = random.nextInt(70, 80);
-            } else if (num == 5 || num == 6 || num == 7 || num == 8) {
-                score = random.nextInt(80, 90);
+
+            // do I need to add the next score with the previous one like in taxes
+            if (rando == 0) {
+                score = random.nextInt(60);
+            } else if (rando == 1 || rando == 2) {
+                score = random.nextInt(70);
+            } else if (rando == 3 || rando == 4 ) {
+                score = random.nextInt(80);
+            } else if (rando == 5 || rando == 6 || rando == 7 || rando == 8) {
+                score = random.nextInt(90);
             } else {
-                score = random.nextInt(90, 100);
+                score = random.nextInt(100);
             }
         }
     }
