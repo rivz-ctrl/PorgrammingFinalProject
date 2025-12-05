@@ -11,7 +11,7 @@ public class Assignment {
     private ArrayList<Integer> scores;
     private static int nextId = 1;
 
-    public Assignment(String assignmentName, double weight, int students) {
+    public Assignment(String assignmentName, double weight) {
         this.assignmentId = "Assignment-" + nextId++;
         this.assignmentName = assignmentName;
         this.weight = 100;
@@ -26,11 +26,17 @@ public class Assignment {
      * calculates the average for the assignment
      */
     public void calcAssignmentAvg() {
+        if (scores.isEmpty()) {
+            System.out.println("No scores to calculate average from");
+            return;
+        }
+
         int sum = 0;
         for (int score : scores) {
             sum += score;
         }
         double assignmentAvg = sum / (double) scores.size();
+        System.out.printf("Assignment average for %s (%s) is: %f", assignmentName, assignmentId, assignmentAvg);
     }
 
     /**
@@ -41,16 +47,17 @@ public class Assignment {
 
         for (int i = 0; i < scores.size(); i++) {
             int num = random.nextInt(0,10);
+            int score = -1;
             if (num == 0) {
-                int score = random.nextInt(0, 60);
+                score = random.nextInt(0, 60);
             } else if (num == 1 || num == 2) {
-                int score = random.nextInt(60, 70);
+                score = random.nextInt(60, 70);
             } else if (num == 3 || num == 4 ) {
-                int score = random.nextInt(70, 80);
+                score = random.nextInt(70, 80);
             } else if (num == 5 || num == 6 || num == 7 || num == 8) {
-                int score = random.nextInt(80, 90);
+                score = random.nextInt(80, 90);
             } else {
-                int score = random.nextInt(90, 100);
+                score = random.nextInt(90, 100);
             }
         }
     }
