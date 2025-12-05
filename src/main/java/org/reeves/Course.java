@@ -12,10 +12,18 @@ import java.util.ArrayList;
 public class Course {
     private String courseId;
     private String courseName;
+    private double credits;
     private Department department;
     private ArrayList<Assignment> assignments;
     private ArrayList<Student> registeredStudents;
     private static int nextId = 1;
+
+    public Course(Department department, String courseName, double credits) {
+        this.courseName = courseName;
+        this.credits = credits;
+        this.department = department;
+        this.courseId = "C-" + department.getDepartmentId() + "-" + String.format("%02d", nextId++);
+    }
 
     /**
      * checks if the sum of weights of all assignments of that course equals 100%
