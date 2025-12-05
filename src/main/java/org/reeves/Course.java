@@ -12,7 +12,6 @@ import java.util.ArrayList;
 public class Course {
     private String courseId;
     private String courseName;
-    private double credits;
     private Department department;
     private ArrayList<Assignment> assignments;
     private ArrayList<Student> registeredStudents;
@@ -23,7 +22,8 @@ public class Course {
      * @return whether the sum of weights of assignments is valid
      */
     public boolean isAssignmentWeightValid() {
-
+        double weightTotal = assignments;
+        return weightTotal;
     }
 
     /**
@@ -86,6 +86,15 @@ public class Course {
     public String toString() {
 
     }
+
+
+
+
+
+
+
+
+
 
     public String toSimplifiedStringg() {
         "}";
