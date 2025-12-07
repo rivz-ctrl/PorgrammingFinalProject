@@ -42,19 +42,20 @@ public class Student {
 
     // dont forget to make Course  and assignments (reminder: they are just placeholders for now)
     public boolean registerCourses(Course course) {
-        if (registeredCourses.contains(course)) {
+        if (course == null || registeredCourses.contains(course)) {
             return false;
+
+        if (course.getRegisteredStudents().contains(this)) {
+            course.getRegisteredStudents().add(this);
         }
 
-        registeredCourses.add(course);
-        course.getRegisteredStudents().add(this);
-
         for (Assignment assignment : course.getAssignments()) {
-            assignment.getScores().add(null);
+            if (assignment.getScores().size() < course.getRegisteredStudents().size()) {
+                assignment.getScores().add(null);
+            }
         }
 
         return true;
-        }
     }
 
     /**

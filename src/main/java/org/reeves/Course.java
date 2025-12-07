@@ -58,8 +58,7 @@ public class Course {
         finalScores.add(null);
 
         for (Assignment assignment : assignments) {
-            assignment.getscores().add(null);
-            assignment.getfinalScores.add(null);
+            assignment.getScores().add(null);
         }
         return true;
     }
