@@ -14,8 +14,8 @@ public class Course {
     private String courseName;
     private double credits;
     private Department department;
-    private ArrayList<Assignment> assignments;
-    private ArrayList<Student> registeredStudents;
+    private ArrayList<Assignment> assignments = new ArrayList<>();
+    private ArrayList<Student> registeredStudents = new ArrayList<>();
     private static int nextId = 1;
 
     public Course(Department department, String courseName, double credits) {
@@ -46,7 +46,13 @@ public class Course {
      * @return if the student can be registered
      */
     public boolean registerStudent (Student student) {
+        registeredStudents.add(student);
 
+        for (Assignment assignment : assignments) {
+            assignment.getscores().add(null);
+            assignment.getfinalScores.add(null);
+        }
+        return true;
     }
 
     /**
@@ -54,7 +60,17 @@ public class Course {
      * @return the student's weighted average
      */
     public int[] calcStudentsAverage() {
+        int numberOfStudents = registeredStudents.size();
+        int[] weightedAverage = new int[numberOfStudents];
 
+        for (Assignment assignment : assignments) {
+            int weightedScore = ((assignment.getWeight / 100) * assignment.getscore);
+            int weightedScores = 0 + weightedScore;
+            int weightedAvg = weightedScores / assignments.size();
+        }
+        weightedAverage = new int[]{weightedAvg};
+
+        return
     }
 
     /**
