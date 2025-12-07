@@ -121,6 +121,31 @@ public class Course {
     }
 
     /**
+     * converts a course to a simple string
+     * @return the simplified string
+     */
+    public String toSimplifiedString() {
+        return  courseId + ' ' + courseName + ' ' + credits + ' ' + department.getDepartmentName();
+    }
+
+    /**
+     * converts a course to a string and a line to show if the current is AssignmentWeightValid
+     * @return a string containing : courseId, courseName, credits, department, assignments, registeredStudents(studentId, studentName, departmentName
+     */
+    public String toString() {
+        return "Course = (" +
+                "courseId=" + courseId + '\'' +
+                ", courseName" + courseName + '\'' +
+
+                ", credits=" + credits + '\'' +
+                ", department=" + department + '\'' +
+                ", assignments=" + assignments + '\'' +
+                ", registeredStudents=" + registeredStudents +
+                ')';
+
+    }
+
+    /**
      * displays the scores of a course in a table (with assignment averages and student weighted average)
      */
     public void displayScores() {
@@ -157,35 +182,10 @@ public class Course {
 
         for(int rowIndex = 0; rowIndex < table.length; rowIndex++) {
             for (int colIndex = 0; colIndex < table[rowIndex].length; colIndex++) {
-            String cell = table[rowIndex][colIndex] == null ? "N/A" : table[rowIndex][colIndex];
+                String cell = table[rowIndex][colIndex] == null ? "N/A" : table[rowIndex][colIndex];
                 System.out.println(cell + " ");
             }
             System.out.println();
         }
-    }
-
-    /**
-     * converts a course to a simple string
-     * @return the simplified string
-     */
-    public String toSimplifiedString() {
-        return  courseId + ' ' + courseName + ' ' + credits + ' ' + department.getDepartmentName();
-    }
-
-    /**
-     * converts a course to a string and a line to show if the current is AssignmentWeightValid
-     * @return a string containing : courseId, courseName, credits, department, assignments, registeredStudents(studentId, studentName, departmentName
-     */
-    public String toString() {
-        return "Course = (" +
-                "courseId=" + courseId + '\'' +
-                ", courseName" + courseName + '\'' +
-
-                ", credits=" + credits + '\'' +
-                ", department=" + department + '\'' +
-                ", assignments=" + assignments + '\'' +
-                ", registeredStudents=" + registeredStudents +
-                ')';
-
     }
 }
