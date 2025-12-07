@@ -32,6 +32,7 @@ public class Assignment {
                 count++;
             }
         }
+        int assignmentAvg = sum / count;
     }
 // does range [0, 10] exclude or include 10
     /**
@@ -40,9 +41,9 @@ public class Assignment {
     public void generateRandomScore() {
         Random random = new Random();
 
-        for (Student student : registeredStudents) {
+        for (int i = 0; i < scores.size(); i++) {
             int rando = random.nextInt(11);
-            int score = -1;
+            int score;
 
             // do I need to add the next score with the previous one like in taxes
             if (rando == 0) {
