@@ -3,8 +3,8 @@ package org.reeves.util;
 public class Util {
     /**
      * converts each word in a string to title case
-     * @param str
-     * @return
+     * @param str the string to be turned to title case
+     * @return the string to title case
      */
     public static String toTitleCase(String str) {
 
