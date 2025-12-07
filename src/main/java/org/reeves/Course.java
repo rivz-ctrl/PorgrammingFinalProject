@@ -73,14 +73,17 @@ public class Course {
         int numberOfStudents = registeredStudents.size();
         int[] weightedAverage = new int[numberOfStudents];
 
-        for (Assignment assignment : assignments) {
-            int weightedScore = ((assignment.getWeight / 100) * assignment.getscore);
-            int weightedScores = 0 + weightedScore;
-            int weightedAvg = weightedScores / assignments.size();
+        for (int i = 0; i < numberOfStudents; i++) {
+            double total = 0;
+            for (Assignment assignment : assignments) {
+                Integer score = assignment.getScores().get(i);
+                if (score != null) {
+                    total += score * assignment.getWeight() / 100.0;
+                }
+            }
+            weightedAverage[i] = (int) total;
         }
-        weightedAverage = new int[]{weightedAvg};
-
-        return
+        return weightedAverage;
     }
 
     /**
