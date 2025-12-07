@@ -15,7 +15,7 @@ public class Department {
 
     public Department(String departmentName) {
         if (isDepartmentNameValid(departmentName)) {
-            this.departmentName = departmentName;
+            this.departmentName = departmentName.trim();
             this.departmentId = String.format("D%02d", nextId++);
         } else {
             this.departmentName = null;
@@ -29,7 +29,7 @@ public class Department {
      * @return whether the department name is valid
      */
     static boolean isDepartmentNameValid(String departmentName) {
-        if (departmentName == null || departmentName.isEmpty()){
+        if (departmentName == null || departmentName.trim().isEmpty()){
             return false;
         }
 
