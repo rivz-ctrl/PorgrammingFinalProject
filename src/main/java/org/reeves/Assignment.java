@@ -1,9 +1,16 @@
 package org.reeves;
 
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.ArrayList;
 import java.util.Random;
 
+@Getter
+@Setter
+@EqualsAndHashCode
 public class Assignment {
     private String assignmentId;
     private String assignmentName;
@@ -57,8 +64,9 @@ public class Assignment {
             } else {
                 score = random.nextInt(100);
             }
+
             scores.set(i, score);
-            // scores.add(score); ????????
+            //scores.add(score);
         }
     }
 

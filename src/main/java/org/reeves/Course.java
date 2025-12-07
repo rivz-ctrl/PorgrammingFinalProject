@@ -14,8 +14,9 @@ public class Course {
     private String courseName;
     private double credits;
     private Department department;
-    private ArrayList<Assignment> assignments = new ArrayList<>();
-    private ArrayList<Student> registeredStudents = new ArrayList<>();
+    private ArrayList<Assignment> assignments;
+    private ArrayList<Student> registeredStudents;
+    private ArrayList<Integer> finalScores;
     private static int nextId = 1;
 
     public Course(Department department, String courseName, double credits) {
