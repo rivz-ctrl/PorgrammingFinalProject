@@ -1,9 +1,7 @@
 package org.reeves;
 
-import lombok.Setter;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Random;
 
 public class Assignment {
@@ -12,11 +10,12 @@ public class Assignment {
     private double weight;
     private ArrayList<Integer> scores;
     private static int nextId = 1;
+    private double averageScore;
 
     public Assignment(String assignmentName, double weight) {
-        this.assignmentId = "Assignment-" + nextId++;
+        this.assignmentId = String.format("Assignment-%d", nextId++);
         this.assignmentName = assignmentName;
-        this.weight = 100;
+        this.weight = weight;
         this.scores = new ArrayList<>();
     }
 
