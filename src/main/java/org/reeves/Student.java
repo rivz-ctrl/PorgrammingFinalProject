@@ -69,8 +69,16 @@ public class Student {
             return false;
         }
 
+        int idx = course.getRegisteredStudents().indexOf(this);
+
         registeredCourses.remove(course);
         course.getRegisteredStudents().remove(this);
+
+        for (Assignment assignment : course.getAssignments()) {
+            if (idx >= 0 && idx < assignment.getScores().size()) {
+                assignment.getScores().remove(idx);
+            }
+            }
 
         return true;
     }

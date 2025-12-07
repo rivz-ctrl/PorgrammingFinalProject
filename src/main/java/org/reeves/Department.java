@@ -3,9 +3,7 @@ package org.reeves;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
-@ToString
 @EqualsAndHashCode
 @Getter
 public class Department {
@@ -40,5 +38,13 @@ public class Department {
             this.departmentName = null;
             this.departmentId = null;
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Department{" +
+                "departmentId='" + departmentId + '\'' +
+                ", departmentName='" + departmentName + '\'' +
+                '}';
     }
 }
