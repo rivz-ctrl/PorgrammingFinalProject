@@ -136,6 +136,15 @@ public class Course {
         }
         table[0][numOfAssignments + 1] = "Final Score";
 
+        for (int i = 0; i < numOfStudents; i++) {
+            table[i + 1][0] = registeredStudents.get(i).getStudentName();
+
+            for (int j = 0; j < numOfAssignments; j++) {
+                Integer score = assignments.get(j).getScores().get(i);
+            }
+            table[i+1][numOfAssignments + 1] = Integer.toString(finalAverages[i]);
+        }
+
     }
 
     /**
