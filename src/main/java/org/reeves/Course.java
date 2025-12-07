@@ -151,10 +151,17 @@ public class Course {
             assignments.get(j).calcAssignmentAvg();
             table[numOfStudents +  1][j + 1] = String.format("%f", assignments.get(j).getAverageScore());
         }
-
         table[numOfStudents+1][numOfAssignments+1] = "The average for the final score is not available";
 
+        System.out.println("\n Course: " + courseName + "(" + courseId + ")\n");
 
+        for(int rowIndex = 0; rowIndex < table.length; rowIndex++) {
+            for (int colIndex = 0; colIndex < table[rowIndex].length; colIndex++) {
+            String cell = table[rowIndex][colIndex] == null ? "N/A" : table[rowIndex][colIndex];
+                System.out.println(cell + " ");
+            }
+            System.out.println();
+        }
     }
 
     /**
