@@ -26,7 +26,7 @@ public class Assignment {
     public void calcAssignmentAvg() {
         int sum = 0;
         int count = 0;
-        for (int score : scores) {
+        for (Integer score : scores) {
             if (score != null) {
                 sum += score;
                 count++;
