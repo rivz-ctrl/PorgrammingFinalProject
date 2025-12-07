@@ -58,7 +58,9 @@ public class Course {
         finalScores.add(null);
 
         for (Assignment assignment : assignments) {
-            assignment.getScores().add(null);
+            while (assignment.getScores().size() < registeredStudents.size()) {
+                assignment.getScores().add(null);
+            }
         }
         return true;
     }

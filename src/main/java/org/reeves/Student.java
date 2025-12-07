@@ -80,7 +80,6 @@ public class Student {
             if (idx >= 0 && idx < assignment.getScores().size()) {
                 assignment.getScores().remove(idx);
             }
-
         }
         return true;
     }
