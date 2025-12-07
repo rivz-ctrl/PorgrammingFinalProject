@@ -17,6 +17,7 @@ public class Assignment {
         this.assignmentName = assignmentName;
         this.weight = weight;
         this.scores = new ArrayList<>();
+        this.averageScore = 0.0;
     }
 
     /**
@@ -31,7 +32,7 @@ public class Assignment {
                 count++;
             }
         }
-        int assignmentAvg = sum / count;
+        this.averageScore = (count == 0 ? 0.0 : (double) sum / count);
     }
 // does range [0, 10] exclude or include 10
     /**
