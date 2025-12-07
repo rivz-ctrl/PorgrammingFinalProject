@@ -24,17 +24,14 @@ public class Assignment {
      * calculates the average for the assignment
      */
     public void calcAssignmentAvg() {
-        if (scores.isEmpty()) {
-            System.out.println("No scores to calculate average from");
-            return;
-        }
-
         int sum = 0;
+        int count = 0;
         for (int score : scores) {
-            sum += score;
+            if (score != null) {
+                sum += score;
+                count++;
+            }
         }
-        double assignmentAvg = sum / (double) scores.size();
-        System.out.printf("Assignment average for %s (%s) is: %f", assignmentName, assignmentId, assignmentAvg);
     }
 // does range [0, 10] exclude or include 10
     /**
