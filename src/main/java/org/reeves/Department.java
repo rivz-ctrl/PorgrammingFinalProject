@@ -3,13 +3,25 @@ package org.reeves;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @EqualsAndHashCode
 @Getter
+@ToString
 public class Department {
     private String departmentId;
     @Setter private String departmentName;
     private static int nextId = 1;
+
+    public Department(String departmentName) {
+        if (isDepartmentNameValid(departmentName)) {
+            this.departmentName = departmentName;
+            this.departmentId = String.format("D%02d", nextId++);
+        } else {
+            this.departmentName = null;
+            this.departmentId = null;
+        }
+    }
 
     /**
      * checks if a department name is valid or not (should only contain letters or space)
@@ -30,21 +42,4 @@ public class Department {
         return true;
     }
 
-    public Department(String departmentName) {
-        if (isDepartmentNameValid(departmentName)) {
-            this.departmentName = departmentName;
-            this.departmentId = String.format("D%02d", nextId++);
-        } else {
-            this.departmentName = null;
-            this.departmentId = null;
-        }
-    }
-
-    @Override
-    public String toString() {
-        return "Department{" +
-                "departmentId='" + departmentId + '\'' +
-                ", departmentName='" + departmentName + '\'' +
-                '}';
-    }
 }
