@@ -24,6 +24,9 @@ public class Course {
         this.credits = credits;
         this.department = department;
         this.courseId = "C-" + department.getDepartmentId() + "-" + String.format("%02d", nextId++);
+        this.registeredStudents = new ArrayList<>();
+        this.assignments = new ArrayList<>();
+        this.finalScores = new ArrayList<>();
     }
 
     /**
