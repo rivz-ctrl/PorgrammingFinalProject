@@ -33,7 +33,7 @@ public class Course {
      * checks if the sum of weights of all assignments of that course equals 100%
      * @return whether the sum of weights of assignments is valid
      */
-    // dont forget to write Weight method in assignment
+    // don't forget to write Weight method in assignment
     public boolean isAssignmentWeightValid() {
         double weightTotal = 0;
         for (Assignment assignment : assignments) {
@@ -50,6 +50,10 @@ public class Course {
      * @return if the student can be registered
      */
     public boolean registerStudent (Student student) {
+        if (student == null || registeredStudents.contains(student)) {
+            return false;
+        }
+
         registeredStudents.add(student);
 
         for (Assignment assignment : assignments) {
