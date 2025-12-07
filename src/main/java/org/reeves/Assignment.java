@@ -57,8 +57,8 @@ public class Assignment {
             } else {
                 score = random.nextInt(100);
             }
-
-            scores.add(score);
+            scores.set(i, score);
+            // scores.add(score); ????????
         }
     }
 
