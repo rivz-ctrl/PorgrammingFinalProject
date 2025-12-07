@@ -60,6 +60,5 @@ public class Address {
             this.province = null;
             this.postalCode = null;
         }
-
     }
 }

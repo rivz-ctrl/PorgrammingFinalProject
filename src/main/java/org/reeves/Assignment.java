@@ -18,10 +18,6 @@ public class Assignment {
         this.assignmentName = assignmentName;
         this.weight = 100;
         this.scores = new ArrayList<>();
-
-        for (int i = 0; i < students; i++) {
-            scores.add(0);
-        }
     }
 
     /**
