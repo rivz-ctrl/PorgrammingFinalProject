@@ -130,34 +130,19 @@ public class Course {
      * @return
      */
     public String toString() {
+        return "Course = (" +
+                "courseId=" + courseId + '\'' +
+                ", courseName" + courseName + '\'' +
+
+                ", credits=" + credits + '\'' +
+                ", department=" + department + '\'' +
+                ", assignments=" + assignments + '\'' +
+                ", registeredStudents=" + registeredStudents +
+                ')';
 
     }
 
 
-
-
-
-
-
-
-
-
-//    public String toSimplifiedStringg() {
-//        "}";
-//    }
-//
-//    @Override
-//    public String toString {
-//        String message = "Student{"
-//        "name=" + name + '\'' +
-//                ", course=";
-//        for (Student student : students) {
-//            message += student.toSimplifiedStringg();
-//        }
-//
-//        return message;
-//    }
-//
 //    public list<Student> getStudents() {
 //
 //    }
