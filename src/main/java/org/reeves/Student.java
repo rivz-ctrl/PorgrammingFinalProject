@@ -44,6 +44,8 @@ public class Student {
     public boolean registerCourses(Course course) {
         if (course == null || registeredCourses.contains(course)) {
             return false;
+        }
+        registeredCourses.add(course);
 
         if (course.getRegisteredStudents().contains(this)) {
             course.getRegisteredStudents().add(this);
@@ -66,12 +68,11 @@ public class Student {
      * @return whether the student's course can be dropped
      */
     public boolean dropCourse(Course course) {
-        if (!registeredCourses.contains(course)) {
+        if (course == null || !getRegisteredCourses().contains(course)) {
             return false;
         }
 
         int idx = course.getRegisteredStudents().indexOf(this);
-
         registeredCourses.remove(course);
         course.getRegisteredStudents().remove(this);
 
@@ -79,8 +80,8 @@ public class Student {
             if (idx >= 0 && idx < assignment.getScores().size()) {
                 assignment.getScores().remove(idx);
             }
-            }
 
+        }
         return true;
     }
 
@@ -96,7 +97,7 @@ public class Student {
                 ", gender=" + gender +
                 ", address=" + address +
                 ", department=" + department +
-                ", registeredCourses=" + toSimplifiedString() +
+                ", registeredCourses=" + registeredCourses.size() +
                 '}';
     }
 }

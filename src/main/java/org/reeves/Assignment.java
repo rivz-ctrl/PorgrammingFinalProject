@@ -55,14 +55,14 @@ public class Assignment {
             // do I need to add the next score with the previous one like in taxes
             if (rando == 0) {
                 score = random.nextInt(60);
-            } else if (rando == 1 || rando == 2) {
-                score = random.nextInt(70);
-            } else if (rando == 3 || rando == 4 ) {
-                score = random.nextInt(80);
-            } else if (rando == 5 || rando == 6 || rando == 7 || rando == 8) {
-                score = random.nextInt(90);
+            } else if (rando <= 2) {
+                score = 60 + random.nextInt(10);
+            } else if (rando <= 4) {
+                score = 70 + random.nextInt(10);
+            } else if (rando <= 8) {
+                score = random.nextInt(10);
             } else {
-                score = random.nextInt(100);
+                score = 90 + random.nextInt(11);
             }
 
             scores.set(i, score);
