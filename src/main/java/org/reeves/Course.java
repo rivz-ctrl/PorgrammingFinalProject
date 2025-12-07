@@ -146,6 +146,15 @@ public class Course {
             table[i+1][numOfAssignments + 1] = Integer.toString(finalAverages[i]);
         }
 
+        table[numOfStudents+1][0] = "Average";
+        for(int j = 0; j < numOfAssignments; j++) {
+            assignments.get(j).calcAssignmentAvg();
+            table[numOfStudents +  1][j + 1] = String.format("%f", assignments.get(j).getAverageScore());
+        }
+
+        table[numOfStudents+1][numOfAssignments+1] = "The average for the final score is not available";
+
+
     }
 
     /**
