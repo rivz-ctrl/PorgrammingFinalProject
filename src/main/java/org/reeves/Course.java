@@ -55,6 +55,7 @@ public class Course {
         }
 
         registeredStudents.add(student);
+        finalScores.add(null);
 
         for (Assignment assignment : assignments) {
             assignment.getscores().add(null);
