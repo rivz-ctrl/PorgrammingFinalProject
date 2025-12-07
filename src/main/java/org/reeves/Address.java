@@ -10,7 +10,7 @@ import lombok.ToString;
 @Getter
 @Setter
 public class Address {
-    private int streetNo;
+    private Integer streetNo;
     private String street;
     private String city;
     private Province province;
@@ -54,7 +54,7 @@ public class Address {
             this.province = province;
             this.postalCode = postalCode.toUpperCase();
         } else {
-            this.streetNo = -1;
+            this.streetNo = null;
             this.street = null;
             this.city = null;
             this.province = null;
