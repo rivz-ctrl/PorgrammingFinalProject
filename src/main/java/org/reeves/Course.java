@@ -130,6 +130,11 @@ public class Course {
 
         String[][] table = new String[numOfStudents + 2][numOfAssignments + 2];
 
+        table[0][0] = "Student Name";
+        for (int j = 0; j < numOfAssignments; j++) {
+            table[0][j+1] = assignments.get(j).getAssignmentName();
+        }
+        table[0][numOfAssignments + 1] = "Final Score";
 
     }
 
