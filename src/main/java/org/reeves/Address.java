@@ -49,11 +49,11 @@ public class Address {
         for(int i = 0; i < 6; i++) {
             char c = postalCode.charAt(i);
 
-            if (i % 2 != 0) {
-                if (Character.isDigit(c)) {
+            if (i % 2 == 0) {
+                if (!Character.isLetter(c)) {
                     return false;
                 } else {
-                    if (Character.isLetter(c)) {
+                    if (!Character.isDigit(c)) {
                         return false;
                     }
                 }
