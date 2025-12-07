@@ -21,6 +21,15 @@ public class Student {
         MALE, FEMALE;
     }
 
+    public Student(String studentName, Gender gender, Address address, Department department) {
+        this.studentName = studentName;
+        this.gender = gender;
+        this.address = address;
+        this.department = department;
+        this.studentId = String.format("S%06d", nextId++);
+        this.registeredCourses = new ArrayList<>();
+    }
+
     /**
      * registers a course
      * 1) adds the course to the student's registeredCourses list
@@ -40,11 +49,9 @@ public class Student {
         registeredCourses.add(course);
         course.getRegisteredStudents().add(this);
 
-        ArrayList<Integer> startingScores = new ArrayList<>();
         for (Assignment assignment : course.getAssignments()) {
-            startingScores.add(null);
+            assignment.getScores().add(null);
         }
-        course.getscores().add(this, startingScores);
 
         return true;
         }
@@ -66,15 +73,6 @@ public class Student {
         course.getRegisteredStudents().remove(this);
 
         return true;
-    }
-
-    public Student(String studentName, Gender gender, Address address, Department department) {
-        this.studentName = studentName;
-        this.gender = gender;
-        this.address = address;
-        this.department = department;
-        this.studentId = String.format("S%06d", nextId++);
-        this.registeredCourses = new ArrayList<>();
     }
 
     public String toSimplifiedString() {
