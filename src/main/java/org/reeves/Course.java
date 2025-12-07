@@ -141,6 +141,7 @@ public class Course {
 
             for (int j = 0; j < numOfAssignments; j++) {
                 Integer score = assignments.get(j).getScores().get(i);
+                table[i+1][j+1] = (score == null ? "0" : score.toString());
             }
             table[i+1][numOfAssignments + 1] = Integer.toString(finalAverages[i]);
         }
