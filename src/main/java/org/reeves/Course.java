@@ -124,6 +124,12 @@ public class Course {
      * displays the scores of a course in a table (with assignment averages and student weighted average)
      */
     public void displayScores() {
+        int numOfStudents = registeredStudents.size();
+        int numOfAssignments = assignments.size();
+        int[] finalAverages = calcStudentsAverage();
+
+        String[][] table = new String[numOfStudents + 2][numOfAssignments + 2];
+
 
     }
 
