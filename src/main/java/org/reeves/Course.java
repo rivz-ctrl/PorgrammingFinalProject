@@ -107,7 +107,17 @@ public class Course {
      * calculates the final score for each student
      */
     public void generateScores() {
+        for (Assignment assignment : assignments) {
+            assignment.generateRandomScore();;
+            assignment.calcAssignmentAvg();;
+        }
 
+        int[] studentsAverages = calcStudentsAverage();
+
+        finalScores.clear();
+        for (int avg : studentsAverages) {
+            finalScores.add(avg);
+        }
     }
 
     /**
@@ -122,12 +132,12 @@ public class Course {
      * @return the simplified string
      */
     public String toSimplifiedString() {
-
+        return  courseId + ' ' + courseName + ' ' + credits + ' ' + department.getDepartmentName();
     }
 
     /**
      * converts a course to a string and a line to show if the current is AssignmentWeightValid
-     * @return
+     * @return a string containing : courseId, courseName, credits, department, assignments, registeredStudents(studentId, studentName, departmentName
      */
     public String toString() {
         return "Course = (" +
@@ -141,9 +151,4 @@ public class Course {
                 ')';
 
     }
-
-
-//    public list<Student> getStudents() {
-//
-//    }
 }
