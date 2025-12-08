@@ -180,11 +180,21 @@ public class Course {
 
         System.out.println("\n Course: " + courseName + "(" + courseId + ")\n");
 
-        int cellWidth = 10;
+        int cellWidth = "Student Name".length();
+        for (Student student : registeredStudents) {
+            if (student.getStudentName().length() > cellWidth) {
+                cellWidth = student.getStudentName().length();
+            }
+        }
+
         for(int rowIndex = 0; rowIndex < table.length; rowIndex++) {
             for (int colIndex = 0; colIndex < table[rowIndex].length; colIndex++) {
                 String cell = table[rowIndex][colIndex] == null ? "N/A" : table[rowIndex][colIndex];
-                System.out.printf(String.format("%-" + cellWidth + "s", cell));
+                if (colIndex == 0) {
+                    System.out.printf(String.format("%-" + cellWidth + "s", cell));
+                } else {
+                    System.out.printf(String.format("%-10s", cell));
+                }
             }
             System.out.println();
         }
