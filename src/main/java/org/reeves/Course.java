@@ -174,16 +174,17 @@ public class Course {
         table[numOfStudents+1][0] = "Average";
         for(int j = 0; j < numOfAssignments; j++) {
             assignments.get(j).calcAssignmentAvg();
-            table[numOfStudents +  1][j + 1] = String.format("%f", assignments.get(j).getAverageScore());
+            table[numOfStudents +  1][j + 1] = String.format("%.2f", assignments.get(j).getAverageScore());
         }
-        table[numOfStudents+1][numOfAssignments+1] = "The average for the final score is not available";
+        table[numOfStudents+1][numOfAssignments+1] = "N/A";
 
         System.out.println("\n Course: " + courseName + "(" + courseId + ")\n");
 
+        int cellWidth = 10;
         for(int rowIndex = 0; rowIndex < table.length; rowIndex++) {
             for (int colIndex = 0; colIndex < table[rowIndex].length; colIndex++) {
                 String cell = table[rowIndex][colIndex] == null ? "N/A" : table[rowIndex][colIndex];
-                System.out.println(cell + " ");
+                System.out.printf(String.format("%-" + cellWidth + "s", cell));
             }
             System.out.println();
         }
