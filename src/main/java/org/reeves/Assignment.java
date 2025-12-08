@@ -41,7 +41,7 @@ public class Assignment {
         }
         this.averageScore = (count == 0 ? 0.0 : (double) sum / count);
     }
-// does range [0, 10] exclude or include 10
+
     /**
      * generates random scores for all students in an assignment
      */
@@ -52,7 +52,6 @@ public class Assignment {
             int rando = random.nextInt(11);
             int score;
 
-            // do I need to add the next score with the previous one like in taxes
             if (rando == 0) {
                 score = random.nextInt(60);
             } else if (rando <= 2) {

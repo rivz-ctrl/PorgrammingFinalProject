@@ -41,7 +41,6 @@ public class Student {
      * @return whether the student can be registered
      */
 
-    // dont forget to make Course  and assignments (reminder: they are just placeholders for now)
     public boolean registerCourses(Course course) {
         if (course == null || registeredCourses.contains(course)) {
             return false;
