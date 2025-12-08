@@ -4,6 +4,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.reeves.util.Util;
 
 @EqualsAndHashCode
 @Getter
@@ -15,7 +16,7 @@ public class Department {
 
     public Department(String departmentName) {
         if (isDepartmentNameValid(departmentName)) {
-            this.departmentName = departmentName.trim();
+            this.departmentName = Util.toTitleCase(departmentName.trim());
             this.departmentId = String.format("D%02d", nextId++);
         } else {
             this.departmentName = null;
