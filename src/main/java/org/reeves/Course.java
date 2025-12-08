@@ -3,6 +3,7 @@ package org.reeves;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import org.reeves.util.Util;
 
 import java.util.ArrayList;
 
@@ -20,7 +21,7 @@ public class Course {
     private static int nextId = 1;
 
     public Course(Department department, String courseName, double credits) {
-        this.courseName = courseName;
+        this.courseName = Util.toTitleCase(courseName);
         this.credits = credits;
         this.department = department;
         this.courseId = "C-" + department.getDepartmentId() + "-" + String.format("%02d", nextId++);
