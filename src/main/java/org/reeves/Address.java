@@ -52,10 +52,10 @@ public class Address {
             if (i % 2 == 0) {
                 if (!Character.isLetter(c)) {
                     return false;
-                } else {
-                    if (!Character.isDigit(c)) {
-                        return false;
-                    }
+                }
+            } else {
+                if (!Character.isDigit(c)) {
+                    return false;
                 }
             }
         }
