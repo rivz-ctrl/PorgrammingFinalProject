@@ -24,7 +24,7 @@ public class AssignmentTest {
     }
 
     @Test
-    @DisplayName("[null] -> 80.0")
+    @DisplayName("[null] -> 0.0")
     void testCalcAssignmentAverage2() {
         ArrayList<Integer> scores = new ArrayList<>();
         scores.add(null);
@@ -33,8 +33,56 @@ public class AssignmentTest {
         assignment.setScores(scores);
         assignment.calcAssignmentAvg();
 
-        double expected = 0;
+        double expected = 0.0;
         double actual = assignment.getAverageScore();
         Assertions.assertEquals(expected, actual);
     }
+
+    @Test
+    @DisplayName("[] -> 0.0")
+    void testCalcAssignmentAverage3() {
+        ArrayList<Integer> scores = new ArrayList<>();
+
+        Assignment assignment = new Assignment("AssignmentTest3", 25);
+        assignment.setScores(scores);
+        assignment.calcAssignmentAvg();
+
+        double expected = 0.0;
+        double actual = assignment.getAverageScore();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName("[null, 60, 90] -> 75.0")
+    void testCalcAssignmentAverage4() {
+        ArrayList<Integer> scores = new ArrayList<>();
+        scores.add(null);
+        scores.add(60);
+        scores.add((90));
+
+        Assignment assignment = new Assignment("AssignmentTest4", 25);
+        assignment.setScores(scores);
+        assignment.calcAssignmentAvg();
+
+        double expected = 75.0;
+        double actual = assignment.getAverageScore();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName("[100] -> 100.0")
+    void testCalcAssignmentAverage5() {
+        ArrayList<Integer> scores = new ArrayList<>();
+        scores.add(100);
+
+        Assignment assignment = new Assignment("AssignmentTest5", 25);
+        assignment.setScores(scores);
+        assignment.calcAssignmentAvg();
+
+        double expected = 100.0;
+        double actual = assignment.getAverageScore();
+        Assertions.assertEquals(expected, actual);
+    }
+
+
 }
