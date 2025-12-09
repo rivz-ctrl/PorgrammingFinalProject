@@ -50,10 +50,10 @@ public class Address {
             char c = postalCode.charAt(i);
 
             if (i % 2 == 0) {
-                if (!Character.isLetter(c)) {
+                if (!Character.isDigit(c)) {
                     return false;
                 } else {
-                    if (!Character.isDigit(c)) {
+                    if (!Character.isLetter(c)) {
                         return false;
                     }
                 }
