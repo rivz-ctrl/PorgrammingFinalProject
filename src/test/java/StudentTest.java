@@ -4,18 +4,20 @@ import org.junit.jupiter.api.Test;
 import org.reeves.*;
 
 public class StudentTest {
-    Department department = new Department("Finances");
-    Address address = new Address(5555, "Av. Patrice Lumumba", "Night City" ,Address.Province.ON, "W4H4L4");
-    Student student = new Student("Aubrey Graham", Student.Gender.MALE, address, department);
-    Course course = new Course(department, "FF101", 2.0);
+
 
     @Test
-    @DisplayName("")
+    @DisplayName("new course -> true")
     void testRegisterCourses1() {
-        boolean expected = true;
-        boolean actual =;
-        Assertions.assertEquals(expected, actual);
-        Assertions.assertTrue();
+        Department department = new Department("Finances");
+        Address address = new Address(5555, "Av. Patrice Lumumba", "Night City" ,Address.Province.ON, "W4H4L4");
+        Student student = new Student("Aubrey Graham", Student.Gender.MALE, address, department);
+        Course course = new Course(department, "FF101", 2.0);
 
+        boolean expected = true;
+        boolean actual = student.registerCourses(course);
+
+        Assertions.assertEquals(expected, actual);
+        Assertions.assertTrue(student.getRegisteredCourses().contains(course));
     }
 }
