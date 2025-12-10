@@ -68,7 +68,7 @@ public class CourseTest {
 
     @Test
     @DisplayName("signing up for the same course twice course -> false")
-    void testCalcStudentAverage() {
+    void testCalcStudentAverage1() {
         Department department = new Department("Finances");
         Address address = new Address(5555, "Av. Patrice Lumumba", "Night City" ,Address.Province.ON, "W4H4L4");
         Student student = new Student("Aubrey Graham", Student.Gender.MALE, address, department);
@@ -82,6 +82,27 @@ public class CourseTest {
         course.getAssignments().get(1).getScores().set(0, 60);
 
         int[] expected = {70};
+        int[] actual = course.calcStudentsAverage();
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName(" ass01 - null + ass02 - null -> 0")
+    void testCalcStudentAverage2() {
+        Department department = new Department("Finances");
+        Address address = new Address(5555, "Av. Patrice Lumumba", "Night City" ,Address.Province.ON, "W4H4L4");
+        Student student = new Student("Aubrey Graham", Student.Gender.MALE, address, department);
+        Course course = new Course(department, "Budgeting", 1.0);
+
+        course.registerStudent(student);
+        course.addAssignment("Ass01", 50, 100);
+        course.addAssignment("Ass02", 50, 100);
+
+        course.getAssignments().get(0).getScores().set(0, null);
+        course.getAssignments().get(1).getScores().set(0, null);
+
+        int[] expected = {0};
         int[] actual = course.calcStudentsAverage();
 
         Assertions.assertArrayEquals(expected, actual);
