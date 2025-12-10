@@ -35,5 +35,35 @@ public class CourseTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    @Test
+    @DisplayName("new student signing up for a course -> true")
+    void testRegisterCourses1() {
+        Department department = new Department("Finances");
+        Address address = new Address(5555, "Av. Patrice Lumumba", "Night City" ,Address.Province.ON, "W4H4L4");
+        Student student = new Student("Aubrey Graham", Student.Gender.MALE, address, department);
+        Course course = new Course(department, "Budgeting", 1.0);
+
+        boolean expected = true;
+        boolean actual = course.registerStudent(student);
+
+        Assertions.assertEquals(expected, actual);
+        Assertions.assertTrue(course.getRegisteredStudents().contains(student));
+    }
+
+    @Test
+    @DisplayName("signing up for the same course twice course -> false")
+    void testRegisterCourses2() {
+        Department department = new Department("Finances");
+        Address address = new Address(5555, "Av. Patrice Lumumba", "Night City" ,Address.Province.ON, "W4H4L4");
+        Student student = new Student("Aubrey Graham", Student.Gender.MALE, address, department);
+        Course course = new Course(department, "Budgeting", 1.0);
+
+        course.registerStudent(student);
+
+        boolean expected = false;
+        boolean actual = course.registerStudent(student);
+
+        Assertions.assertEquals(expected, actual);
+    }
 
 }
