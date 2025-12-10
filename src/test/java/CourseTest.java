@@ -78,6 +78,8 @@ public class CourseTest {
         course.addAssignment("Ass01", 50, 100);
         course.addAssignment("Ass02", 50, 100);
 
+        course.getAssignments().get(0).getScores().set(0, 80);
+
         int[] expected = {70};
         int[] actual = course.calcStudentsAverage();
 
