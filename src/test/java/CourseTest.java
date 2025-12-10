@@ -148,7 +148,7 @@ public class CourseTest {
     }
 
     @Test
-    @DisplayName("")
+    @DisplayName("adds a new assignment -> true")
     void testAddAssignment() {
         Department department = new Department("Finances");
         Address address = new Address(5555, "Av. Patrice Lumumba", "Night City" ,Address.Province.ON, "W4H4L4");
@@ -157,13 +157,13 @@ public class CourseTest {
 
         course.registerStudent(student);
 
-        boolean expected = ;
-        boolean actual = ;
+        boolean expected = true;
+        boolean actual = course.addAssignment("FinalProject", 100, 100);
 
         Assertions.assertEquals(expected, actual);
-        Assertions.assertEquals();
-        Assertions.assertEquals();
-        Assertions.assertNull();
+        Assertions.assertEquals(1, course.getAssignments().size());
+        Assertions.assertEquals(1, course.getAssignments().getFirst().getScores().size());
+        Assertions.assertNull(course.getAssignments().getFirst().getScores().getFirst());
 
     }
 
