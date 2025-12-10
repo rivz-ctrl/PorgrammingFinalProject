@@ -13,4 +13,13 @@ public class UtilTest {
         String actual = Util.toTitleCase(str);
         Assertions.assertEquals(expected, actual);
     }
+
+    @Test
+    @DisplayName("HEllo wORld -> Hello World")
+    void testToTitleCase2() {
+        String str = "HEllo wORld";
+        String expected = "Hello World";
+        String actual = Util.toTitleCase(str);
+        Assertions.assertEquals(expected, actual);
+    }
 }
