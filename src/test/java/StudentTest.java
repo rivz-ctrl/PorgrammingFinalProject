@@ -34,4 +34,23 @@ public class StudentTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
+    @Test
+    @DisplayName("course is removed -> true")
+    void testDropCourse1() {
+        Department department = new Department("Finances");
+        Address address = new Address(5555, "Av. Patrice Lumumba", "Night City" ,Address.Province.ON, "W4H4L4");
+        Student student = new Student("Aubrey Graham", Student.Gender.MALE, address, department);
+        Course course = new Course(department, "FF101", 2.0);
+
+        student.registerCourses(course);
+
+        boolean expected = true;
+        boolean actual = student.dropCourse(course);
+
+        Assertions.assertEquals(expected, actual);
+        Assertions.assertFalse(student.getRegisteredCourses().contains(course));
+    }
+
+
 }
