@@ -52,5 +52,19 @@ public class StudentTest {
         Assertions.assertFalse(student.getRegisteredCourses().contains(course));
     }
 
+    @Test
+    @DisplayName("course is not even registered -> false")
+    void testDropCourse2() {
+        Department department = new Department("Finances");
+        Address address = new Address(5555, "Av. Patrice Lumumba", "Night City" ,Address.Province.ON, "W4H4L4");
+        Student student = new Student("Aubrey Graham", Student.Gender.MALE, address, department);
+        Course course = new Course(department, "FF101", 2.0);
+
+        boolean expected = false;
+        boolean actual = student.dropCourse(course);
+
+        Assertions.assertEquals(expected, actual);
+    }
+
 
 }
