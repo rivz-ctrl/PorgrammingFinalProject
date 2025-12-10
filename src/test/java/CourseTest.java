@@ -149,7 +149,7 @@ public class CourseTest {
 
     @Test
     @DisplayName("adds a new assignment -> true")
-    void testAddAssignment() {
+    void testAddAssignment1() {
         Department department = new Department("Finances");
         Address address = new Address(5555, "Av. Patrice Lumumba", "Night City" ,Address.Province.ON, "W4H4L4");
         Student student = new Student("Aubrey Graham", Student.Gender.MALE, address, department);
@@ -164,7 +164,25 @@ public class CourseTest {
         Assertions.assertEquals(1, course.getAssignments().size());
         Assertions.assertEquals(1, course.getAssignments().getFirst().getScores().size());
         Assertions.assertNull(course.getAssignments().getFirst().getScores().getFirst());
+    }
 
+    @Test
+    @DisplayName("adds a pre existing assignment -> true")
+    void testAddAssignment2() {
+        Department department = new Department("Finances");
+        Address address = new Address(5555, "Av. Patrice Lumumba", "Night City" ,Address.Province.ON, "W4H4L4");
+        Student student = new Student("Aubrey Graham", Student.Gender.MALE, address, department);
+        Course course = new Course(department, "FF101", 2.0);
+
+        course.registerStudent(student);
+
+        boolean expected = false;
+        boolean actual = course.addAssignment("FinalProject", 100, 100);
+
+        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(1, course.getAssignments().size());
+        Assertions.assertEquals(1, course.getAssignments().getFirst().getScores().size());
+        Assertions.assertNull(course.getAssignments().getFirst().getScores().getFirst());
     }
 
 }
