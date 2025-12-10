@@ -1,8 +1,10 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.reeves.Address;
 import org.reeves.Course;
 import org.reeves.Department;
+import org.reeves.Student;
 
 public class CourseTest {
     @Test
@@ -31,5 +33,15 @@ public class CourseTest {
         boolean expected = false;
         boolean actual = course.isAssignmentWeightValid();
         Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName("new student -> true")
+    void testRegisterStudent1() {
+        Department department = new Department("Finance");
+        Course course = new Course(department, "Budgeting", 1.0);
+
+        Address address = new Address(5555, "Av. Patrice Lumumba", "Night City" ,Address.Province.ON, "W4H4L4");
+        Student student = new Student("Aubrey Graham", Student.Gender.MALE, address, department);
     }
 }
