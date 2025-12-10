@@ -6,7 +6,7 @@ import org.reeves.Department;
 public class DepartmentTest {
     @Test
     @DisplayName("Ministry Of Enjoyment -> true")
-    void testIsDepartmentNameValid() {
+    void testIsDepartmentNameValid1() {
         Department department = new Department("Ministry Of Enjoyment");
         String expectedName = "Ministry Of Enjoyment";
         String actualName = department.getDepartmentName();
@@ -16,4 +16,13 @@ public class DepartmentTest {
         String actualId = department.getDepartmentId();
         Assertions.assertEquals(expectedId, actualId);
     }
+
+    @Test
+    @DisplayName("H20 -> null")
+    void testIsDepartmentNameValid2() {
+        Department department = new Department("H2O");
+        Assertions.assertNull(department.getDepartmentName());
+        Assertions.assertNull(department.getDepartmentId());
+    }
+
 }
