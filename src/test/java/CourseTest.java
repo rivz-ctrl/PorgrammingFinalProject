@@ -67,7 +67,7 @@ public class CourseTest {
     }
 
     @Test
-    @DisplayName("signing up for the same course twice course -> false")
+    @DisplayName("[60, 80] -> {70}")
     void testCalcStudentAverage1() {
         Department department = new Department("Finances");
         Address address = new Address(5555, "Av. Patrice Lumumba", "Night City" ,Address.Province.ON, "W4H4L4");
@@ -88,7 +88,7 @@ public class CourseTest {
     }
 
     @Test
-    @DisplayName(" ass01 - null + ass02 - null -> 0")
+    @DisplayName(" [null, null] -> {0}")
     void testCalcStudentAverage2() {
         Department department = new Department("Finances");
         Address address = new Address(5555, "Av. Patrice Lumumba", "Night City" ,Address.Province.ON, "W4H4L4");
@@ -103,6 +103,31 @@ public class CourseTest {
         course.getAssignments().get(1).getScores().set(0, null);
 
         int[] expected = {0};
+        int[] actual = course.calcStudentsAverage();
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName("[null, null, 100 ,null] -> {25}")
+    void testCalcStudentAverage3() {
+        Department department = new Department("Finances");
+        Address address = new Address(5555, "Av. Patrice Lumumba", "Night City" ,Address.Province.ON, "W4H4L4");
+        Student student = new Student("Aubrey Graham", Student.Gender.MALE, address, department);
+        Course course = new Course(department, "Budgeting", 1.0);
+
+        course.registerStudent(student);
+        course.addAssignment("Ass01", 25, 100);
+        course.addAssignment("Ass02", 25, 100);
+        course.addAssignment("Ass03", 25, 100);
+        course.addAssignment("Ass04", 25, 100);
+
+        course.getAssignments().get(0).getScores().set(0, null);
+        course.getAssignments().get(1).getScores().set(0, null);
+        course.getAssignments().get(2).getScores().set(0, 100);
+        course.getAssignments().get(3).getScores().set(0, null);
+
+        int[] expected = {25};
         int[] actual = course.calcStudentsAverage();
 
         Assertions.assertArrayEquals(expected, actual);
