@@ -74,7 +74,7 @@ public class StudentTest {
         Student student = new Student("Aubrey Graham", Student.Gender.MALE, address, department);
         Course course = new Course(department, "FF101", 2.0);
 
-        String expected = "FF101 Aubrey Graham" + student.getStudentId();
+        String expected = "Finances" + " " + "Aubrey Graham" + " " + student.getStudentId() ;
         String actual = student.toSimplifiedString();
 
         Assertions.assertEquals(expected, actual);

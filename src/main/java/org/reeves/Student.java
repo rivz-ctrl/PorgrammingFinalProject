@@ -85,7 +85,7 @@ public class Student {
     }
 
     public String toSimplifiedString() {
-        return department.getDepartmentName() + ' ' + studentName + ' ' + studentId;
+        return department.getDepartmentName() + " " + studentName + " " + studentId;
     }
 
     @Override
