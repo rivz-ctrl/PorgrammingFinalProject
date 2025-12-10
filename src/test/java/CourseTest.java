@@ -185,7 +185,6 @@ public class CourseTest {
         Assertions.assertEquals(1, course.getAssignments().size());
         Assertions.assertEquals(1, course.getAssignments().getFirst().getScores().size());
         Assertions.assertNull(course.getAssignments().getFirst().getScores().getFirst());
-
     }
 
 }
