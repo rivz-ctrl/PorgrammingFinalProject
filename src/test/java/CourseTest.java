@@ -5,10 +5,9 @@ import org.reeves.Course;
 import org.reeves.Department;
 
 public class CourseTest {
-
     @Test
     @DisplayName("weight1 + weight2 + weightn = 100 -> true")
-    void testIsAssignmentWeightValid() {
+    void testIsAssignmentWeightValid1() {
         Department department = new Department("Finance");
         Course course = new Course(department, "Budgeting", 1.0);
 
@@ -20,4 +19,17 @@ public class CourseTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    @Test
+    @DisplayName("weight1 + weight2 + weightn != 100 -> false")
+    void testIsAssignmentWeightValid2() {
+        Department department = new Department("Finance");
+        Course course = new Course(department, "Budgeting", 1.0);
+
+        course.addAssignment("shoppingBudget", 70, 100);
+        course.addAssignment("investingBudget", 50, 100);
+
+        boolean expected = false;
+        boolean actual = course.isAssignmentWeightValid();
+        Assertions.assertEquals(expected, actual);
+    }
 }
