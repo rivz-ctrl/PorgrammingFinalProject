@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.reeves.Assignment;
 import org.reeves.Department;
 
 public class DepartmentTest {
@@ -9,7 +10,8 @@ public class DepartmentTest {
     void testIsDepartmentNameValid1() {
         String str = "Ministry of enjoyment";
         boolean expected = true;
-        boolean actual = Department.
+        boolean actual = Department.isDepartmentNameValid(str);
+        Assertions.assertEquals(expected, actual);
     }
 
 }
