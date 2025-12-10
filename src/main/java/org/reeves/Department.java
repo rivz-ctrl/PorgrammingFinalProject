@@ -29,7 +29,7 @@ public class Department {
      * @param departmentName department nam to be verified
      * @return whether the department name is valid
      */
-    static boolean isDepartmentNameValid(String departmentName) {
+    public static boolean isDepartmentNameValid(String departmentName) {
         if (departmentName == null || departmentName.trim().isEmpty()){
             return false;
         }
