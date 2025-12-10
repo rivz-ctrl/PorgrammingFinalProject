@@ -84,7 +84,7 @@ public class CourseTest {
         int[] expected = {70};
         int[] actual = course.calcStudentsAverage();
 
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertArrayEquals(expected, actual);
     }
 
 }
