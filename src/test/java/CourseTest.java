@@ -66,4 +66,22 @@ public class CourseTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    @Test
+    @DisplayName("signing up for the same course twice course -> false")
+    void testCalcStudentAverage() {
+        Department department = new Department("Finances");
+        Address address = new Address(5555, "Av. Patrice Lumumba", "Night City" ,Address.Province.ON, "W4H4L4");
+        Student student = new Student("Aubrey Graham", Student.Gender.MALE, address, department);
+        Course course = new Course(department, "Budgeting", 1.0);
+
+        course.registerStudent(student);
+        course.addAssignment("Ass01", 50, 100);
+        course.addAssignment("Ass02", 50, 100);
+
+        int[] expected = {70};
+        int[] actual = course.calcStudentsAverage();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
 }
