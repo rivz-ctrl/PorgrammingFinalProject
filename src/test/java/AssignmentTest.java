@@ -83,6 +83,4 @@ public class AssignmentTest {
         double actual = assignment.getAverageScore();
         Assertions.assertEquals(expected, actual);
     }
-
-
 }
