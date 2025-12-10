@@ -1,9 +1,14 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.reeves.Assignment;
+import org.reeves.*;
 
 public class StudentTest {
+    Department department = new Department("Finances");
+    Address address = new Address(5555, "Av. Patrice Lumumba", "Night City" ,Address.Province.ON, "W4H4L4");
+    Student student = new Student("Aubrey Graham", Student.Gender.MALE, address, department);
+    Course course = new Course(department, "FF101", 2.0);
+
     @Test
     @DisplayName("")
     void testRegisterCourses1() {
