@@ -176,13 +176,16 @@ public class CourseTest {
 
         course.registerStudent(student);
 
-        boolean expected = false;
-        boolean actual = course.addAssignment("FinalProject", 100, 100);
+        boolean firstAss = course.addAssignment("FinalProject", 100, 100);
+        Assertions.assertTrue(firstAss);
 
-        Assertions.assertEquals(expected, actual);
+        boolean secondAss = course.addAssignment("FinalProject", 100, 100);
+        Assertions.assertFalse(secondAss);
+
         Assertions.assertEquals(1, course.getAssignments().size());
         Assertions.assertEquals(1, course.getAssignments().getFirst().getScores().size());
         Assertions.assertNull(course.getAssignments().getFirst().getScores().getFirst());
+
     }
 
 }
