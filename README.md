@@ -21,6 +21,9 @@ Classes:
 
 - "Util" class: handles string formatting
 
+Language:
+- Java
+
 Libraries:
-- JUnit Jupiter 6.0.1 : ensures 
-- Project Lombok 1.18.42
+- JUnit Jupiter 6.0.1 : unit testing library ensuring code validity
+- Project Lombok 1.18.42 : generates boilerplate code
