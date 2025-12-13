@@ -25,5 +25,5 @@ Language:
 - Java
 
 Libraries:
-- JUnit Jupiter 6.0.1 : unit testing library ensuring code validity
+- JUnit Jupiter 6.0.1 : unit testing framework ensuring code validity
 - Project Lombok 1.18.42 : generates boilerplate code
