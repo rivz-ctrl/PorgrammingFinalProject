@@ -13,11 +13,13 @@ public class Main {
 
         Course course = new Course(department, "FF101", 2.0);
 
-
-
-        course.addAssignment("In class exercises", 40, 100);
+        course.addAssignment("ICE", 40, 100);
         course.addAssignment("Final", 60,100);
 
-        course.registerStudent(new Student(student.getStudentName(), student.getGender(), student));
-        }
+        course.registerStudent(new Student(student1.getStudentName(), student1.getGender(), student1.getAddress(), department));
+        course.registerStudent(new Student(student2.getStudentName(), student2.getGender(), student2.getAddress(), department));
+
+        course.generateScores();
+        course.displayScores();
+    }
 }
