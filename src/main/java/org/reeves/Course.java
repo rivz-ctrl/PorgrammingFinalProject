@@ -193,7 +193,7 @@ public class Course {
                 cellWidth = student.getStudentName().length();
             }
         }
-        cellWidth += 5;
+        cellWidth += 3;
 
         for(int rowIndex = 0; rowIndex < table.length; rowIndex++) {
             for (int colIndex = 0; colIndex < table[rowIndex].length; colIndex++) {

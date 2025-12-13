@@ -9,7 +9,7 @@ public class Main {
         Address address2 = new Address(5556, "Av. Vagabond", "Dogtown" ,Address.Province.NS, "W7H7L7");
 
         Student student1 = new Student("Aubrey Graham", Student.Gender.MALE, address1, department);
-        Student student2 = new Student("Miyamoto Mushashi", Student.Gender.MALE, address2, department);
+        Student student2 = new Student("Miyamoto Mushashi just testing shit", Student.Gender.MALE, address2, department);
 
         Course course = new Course(department, "FF101", 2.0);
 
