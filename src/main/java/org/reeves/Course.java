@@ -198,9 +198,9 @@ public class Course {
             for (int colIndex = 0; colIndex < table[rowIndex].length; colIndex++) {
                 String cell = table[rowIndex][colIndex] == null ? "N/A" : table[rowIndex][colIndex];
                 if (colIndex == 0) {
-                    System.out.printf(String.format("%-" + cellWidth + "s", cell));
+                    System.out.printf("%-" + cellWidth + "s", cell);
                 } else {
-                    System.out.printf(String.format("%-10s", cell));
+                    System.out.printf("%-10s", cell);
                 }
             }
             System.out.println();

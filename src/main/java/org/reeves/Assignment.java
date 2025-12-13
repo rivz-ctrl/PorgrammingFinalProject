@@ -59,7 +59,7 @@ public class Assignment {
             } else if (rando <= 4) {
                 score = 70 + random.nextInt(10);
             } else if (rando <= 8) {
-                score = random.nextInt(10);
+                score = 80 + random.nextInt(10);
             } else {
                 score = 90 + random.nextInt(11);
             }
