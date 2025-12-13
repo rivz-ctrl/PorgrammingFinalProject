@@ -79,5 +79,4 @@ public class StudentTest {
 
         Assertions.assertEquals(expected, actual);
     }
-
 }

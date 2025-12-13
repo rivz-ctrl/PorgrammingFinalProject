@@ -34,7 +34,6 @@ public class Course {
      * checks if the sum of weights of all assignments of that course equals 100%
      * @return whether the sum of weights of assignments is valid
      */
-    // don't forget to write Weight method in assignment
     public boolean isAssignmentWeightValid() {
         double weightTotal = 0;
         for (Assignment assignment : assignments) {

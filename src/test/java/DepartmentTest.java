@@ -58,7 +58,4 @@ public class DepartmentTest {
         boolean actual = Department.isDepartmentNameValid(str);
         Assertions.assertEquals(expected, actual);
     }
-
-
-
 }
