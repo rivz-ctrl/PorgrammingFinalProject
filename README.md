@@ -20,3 +20,7 @@ Classes:
          Province - restricts province options to Canadian provinces
 
 - "Util" class: handles string formatting
+
+Libraries:
+- JUnit Jupiter 6.0.1 : ensures 
+- Project Lombok 1.18.42
