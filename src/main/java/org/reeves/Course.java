@@ -194,7 +194,7 @@ public class Course {
         }
         cellWidth += 3;
 
-        for(int rowIndex = 0; rowIndex < table.length; rowIndex++) {
+        for (int rowIndex = 0; rowIndex < table.length; rowIndex++) {
             for (int colIndex = 0; colIndex < table[rowIndex].length; colIndex++) {
                 String cell = table[rowIndex][colIndex] == null ? "N/A" : table[rowIndex][colIndex];
                 if (colIndex == 0) {
